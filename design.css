@@ -1,13 +1,8 @@
-@import url('https://fonts.gogleapis.com/css2?family=Play&family=Playfair+Display&family=Roboto:wght@700&display=swap');
-*{
-    font-family: 'Playfair';
-    text-transform: capitalize;
-    transform: all .2s linear;
-}
 
 body{
-background: #121212;
+    background: #121212
 }
+
 
 .navbar-brand{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,24 +11,26 @@ background: #121212;
 }
 .btn-nav-search
 {
-    border-color: purple;
+    border-color: #ff6b08;
     color:white;
     transition: 0.5s;
 }
 
+
 .btn-nav-search:hover
 {
-    border-color: purple;
-    background: purple;
+    border-color: #ff6b08;
+    background: #ff6b08;
     color:white;
     transform: scale(1.1);
 }
 
 .btn-primary
 {
-    background:purple;
+    background:#ff6b08;
     border-color: #121212;
 }
+.btn
 .card{
 width: 100%;
 padding: 1rem;
@@ -46,7 +43,7 @@ border-top-color: rgba(225,225,225,0.5);
 border-left-color: rgba(225,225,225,0.5);
 border-right-color: rgba(225,225,225,0.1);
 border-bottom-color: rgba(225,225,225,0.1);
-transition: 0.3s;
+transition: 0.5s;
 cursor: pointer;
 }
 .cb1{
@@ -55,10 +52,31 @@ cursor: pointer;
 }
 .card:hover{
     transform:translateY(-10px);
-    box-shadow: 0.5rem 0.8rem 0.5rem rgba(225,0,225,0.2); 
+    box-shadow: 0.5rem 0.8rem 0.5rem #eedd44; 
 }
-img{
-    width: 15%;
-    aspect-ratio: 4/3;   
-    object-fit: contain;
+.main-parallax{
+    background: transparent;
+  
+}
+section
+{
+    padding:2rem 9%;
+}
+.main{
+    
+    text-align: center;
+    overflow-x: hidden;
+}
+.main h1{
+    font-size: 7.5vw;
+    text-transform: uppercase;
+    color: whitesmoke;
+   background: linear-gradient( to right, #f32170, #ff6b08,#cf23cf, #eedd44);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.main img{
+    width:100%;
+    margin:1rem 0;
 }
