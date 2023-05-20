@@ -94,10 +94,6 @@ if ($conn->connect_error) {
     
     </div>
   </div>
-
-
-
-
 <!-- Home End-->
 <?php
 
@@ -116,14 +112,15 @@ if ($conn->connect_error) {
               <img src="<?php echo $row["image_path"]?>" class="card-img-top" alt="...">
 
               <div class="card-body">
-                  <h5 class="card-title"><?php echo $row["manufacturer"].' ',$row["car_model"] ?></h5>
+                  <h5 class="card-title"><?php echo $row["year"].' '.$row["manufacturer"].' ',$row["car_model"] ?></h5>
                   <hr>
                   <p class="card-text "><?php echo $row["description"]?></p>
+                  <p class="card-text km">KM Driven: <?php echo $row["kilometers"]?></p>
 
 
               </div>
-              <div class="card-footer text-body-secondary">
-                  <p class="card-text" ><?php echo $row["price"]?></p>
+              <div class="card-footer  text-body-secondary">
+                  <p class="card-text  price" ><?php echo $row["price"]?></p>
               </div>
           </div>
       </a>
@@ -146,6 +143,7 @@ if ($conn->connect_error) {
   </div>
 </a>
 -->
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
