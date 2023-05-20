@@ -51,10 +51,7 @@ cursor: pointer;
     height: 27rem;
     
 }
-.card:hover{
-    transform:translateY(-10px);
-    /*box-shadow: 0.3rem 0.6rem 0.3rem #640c64;*/
-}
+
 .main-parallax{
     background: transparent;
   
@@ -89,7 +86,7 @@ section
 }
 .km{
     font-weight: bold;
-    font-size:1.1em;
+    font-size:1em;
 }
 .card-title{
     font-size: 1.2em;
@@ -97,6 +94,14 @@ section
 .card-text p{
 font-size:1em;
 }
+.card img
+{
+   height: 45%;
+    object-fit: cover;
+}
+
+
+/*FOR CARD COLOR*/
 .card:before{
     content: "";
     z-index: -1;
@@ -120,4 +125,25 @@ font-size:1em;
     bottom: 0;
     left: 0;
     background: inherit;
+}
+.card:hover{
+    background: none;
+     transform:translateY(-5px);
+     /*box-shadow: 0.3rem 0.6rem 0.3rem #640c64;*/
+     border: 1px solid transparent;
+     backdrop-filter: blur(1rem);
+     box-shadow: 1.3rem 1.3rem 1.3rem rgba(0,0,0,0.5);
+     border-top-color: rgba(225,225,225,0.5);
+     border-left-color: rgba(225,225,225,0.5);
+     border-right-color: rgba(225,225,225,0.1);
+     border-bottom-color: rgba(225,225,225,0.1);
+     color:white;
+
+ }
+.btn-outline-light{
+    transition: 0.5s;
+}
+.btn-outline-light:hover{
+    transform: scale(1.1);
+
 }
