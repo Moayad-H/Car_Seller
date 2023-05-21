@@ -4,6 +4,19 @@ body{
 }
 
 
+.input-group-text{
+    background: #121212;
+    color: white;
+}
+.f_t{
+    color: white;
+}
+
+.forms{
+    background: #121212;
+    width: 50em;
+}
+
 
 .col
 {
@@ -48,7 +61,7 @@ body{
     border-color: #ff6b08;
     background: #ff6b08;
     color:white;
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .btn-primary
@@ -84,8 +97,6 @@ cursor: pointer;
     height: 20em;
     font-size: 1.2em;
 }
-
-
 
 
 .main-parallax{
@@ -231,9 +242,31 @@ font-size:1em;
 .cars_row
 {
     margin-right: 0;
+
 }
 
+.carousel{
+    border: #c42a2a solid 2px;
+    border-radius:1em;
 
+
+}
+
+/*.wrapper*/
+/*{*/
+/*    padding: 1rem;*/
+/*    position: relative;*/
+/*    background: linear-gradient(to right, red, purple);*/
+/*    padding: 3px;*/
+/*    border:  solid 2px;*/
+/*    border-radius:1px;*/
+/*}*/
+.table{
+    width: 100%;
+    padding: 2rem;
+    border: white solid 1px;
+    border-radius: 1em;
+}
 
 @keyframes rot55 {
     to {

@@ -98,7 +98,7 @@ if ($conn->connect_error) {
     </div>
 <!-- Home End-->
 
-<div class="row cars_row">
+<div class="row">
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "GET")
@@ -117,7 +117,7 @@ else {
   // Loop through each row and display the car information
   while ($row = $result->fetch_assoc()) {
  ?>
-    <div class="col">
+    <div class="col col-sm-3">
       <a class="btn mb-2 " href="car.php?car=<?php echo $row['id']?>">
           <div class="card cb1 mb-2" style="width: 20rem;">
 

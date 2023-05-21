@@ -1,29 +1,3 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "carSeller";
-
-$conn = new mysqli($servername, $username, $password, $database);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-if ($_SERVER['REQUEST_METHOD'] == "GET")
-{
-    $search_result = $_GET['car'];
-
-    $query = "SELECT * FROM cars where id = '$search_result' ";
-
-    $result = $conn->query($query);
-
-// Check if any records were returned
-    if ($result->num_rows > 0){
-    while ($row = $result->fetch_assoc())
-    {
-
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -97,92 +71,73 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
 <!-- BODY START -->
 <div class=" main d-flex justify-content-center align-item-center ">
     <div class="row justify-content-center align-item-center">
-        <div class="col-12 d-flex justify-content-center align-item-center"
-            <!-- Carousel START-->
-            <div id="carouselExample" class="carousel slide w-80">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="<?php echo $row['image_path'] ?>" class="d-block w-100" alt="IMAGe OF A CAR 1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="<?php echo $row['image_path2']?>" class="d-block w-100" alt="IMAGE OF A CAR 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="<?php echo $row['image_path3']?>" class="d-block w-100" alt="IMAGE OF A CAR 3">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-       <!--  Carousel End -->
+    <div class="col-12">
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "carSeller";
+
+        $conn = new mysqli($servername, $username, $password, $database);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $email = $_POST['email'];
+            $f_name = $_POST['f_Name'];
+            $l_name = $_POST['l_name'];
+            $price = $_POST['price'];
+            $sql = "INSERT INTO php (email, f_name, l_name, price)
+                VALUES ('$email','$f_name','$l_name','$price')";
+        if ($conn->query($sql) === TRUE) {
+            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Email Sent !!</strong>
+  Redirecting to Main Page
+  <div class="spinner-border text-success" role="status">
+  
+  <span class="visually-hidden">Redirecting to Main Page</span>
+  
+</div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+            header("refresh:3;url=index.php");
+        }
+        else {
+            header("refresh:3;url=notFound.php");
+        }
+
+
+
+
+        }
+
+
+        ?>
+    </div>
 
         <div class="col-12">
-            <h2><?php echo $row["year"].' '.$row["manufacturer"].' ',$row["car_model"] ?></h2>
+            <h2>Contact Seller</h2>
         </div>
-        <div class="col-12 d-flex justify-content-center align-item-center">
+    <!--  Carousel End -->
 
-            <div class="card  cb2 mb-2 d-flex text-center" style="width: 60rem;">
+    <div class="col-12 d-flex justify-content-center align-item-center">
 
-                <div class="card-body align-items-left d-flex justify-content-left">
+        <div class="card  cb2 mb-2 d-flex text-center" style="width: 60rem;">
 
-                        <table class="details w-100" >
-                        
-                        <tr>
-                            <td>
-                               <th> Make:</th>
-                            </td>
-                            <td>
-                                <?php echo $row['manufacturer'] ?>
-                            </td>
-                        </tr>
+            <div class="card-body c-form align-items-left d-flex justify-content-left">
 
-                            <tr>
-                                <td>
-                                <th> Model:</th>
-                                </td>
-                                <td>
-                                    <?php echo $row['car_type'] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                <th> KM Driven</th>
-                                </td>
-                                <td>
-                                    <?php echo $row['kilometers'] ?>
-                                </td>
-                            </tr>
+            <form action="form.php" method="post" class="forms" >
 
-                            <tr>
-                                <td>
-                                <th> Vin:</th>
-                                </td>
-                                <td>
-                                    <?php echo $row['vin'] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                <th> Price:</th>
-                                </td>
-                                <td>
-                                    <?php echo $row['price'] ?>
-                                </td>
-                            </tr>
+                <input type="email" class="form-control mb-4" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" name="email" required>
+                <input type="text" class="form-control mb-4" placeholder="First Name" aria-label="Username" aria-describedby="basic-addon1"  name="f_name" required>
+                <input type="text" class="form-control mb-4" placeholder="Last Name" aria-label="Username" aria-describedby="basic-addon1" name="l_name" required>
+                <input type="number" class="form-control mb-4" placeholder="Price You want to pay" aria-label="Username" aria-describedby="basic-addon1" name="price" required>
+                <button  class="btn btn-outline-success btn-nav-search" type="submit">Submit Information</button>
 
-                        </table>
+            </form>
 
 
-                </div>
-                <a class="btn btn-outline-success btn-nav-search" href="form.php">Contact Seller</a>
-                            
             </div>
 
 
@@ -190,10 +145,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
 
 
     </div>
+
+
 </div>
-<?php }}else {
-    header("refresh:0;url=notFound.php");
-}}?>
+</div>
+
 <!--Body End -->
 
 
