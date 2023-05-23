@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
     <div class="row justify-content-center align-item-center">
         <div class="col-12 d-flex justify-content-center align-item-center"
             <!-- Carousel START-->
-            <div id="carouselExample" class="carousel slide w-80">
+            <div id="carousel" class="carousel slide w-85 ">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="<?php echo $row['image_path'] ?>" class="d-block w-100" alt="IMAGe OF A CAR 1">
@@ -111,11 +111,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
                         <img src="<?php echo $row['image_path3']?>" class="d-block w-100" alt="IMAGE OF A CAR 3">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
