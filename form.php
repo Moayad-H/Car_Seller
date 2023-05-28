@@ -121,12 +121,6 @@
         </div>
     <!--  Carousel End -->
 
-    <div class="col-12 d-flex justify-content-center align-item-center">
-
-        <div class="card  cb2 mb-2 d-flex text-center" style="width: 60rem;">
-
-            <div class="card-body c-form align-items-left d-flex justify-content-left">
-
             <form action="form.php" method="post" class="forms" >
 
                 <input type="email" class="form-control mb-4" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" name="email" required>
@@ -138,13 +132,7 @@
             </form>
 
 
-            </div>
-
-
-        </div>
-
-
-    </div>
+        
 
 
 </div>

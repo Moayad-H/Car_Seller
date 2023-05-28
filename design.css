@@ -1,9 +1,7 @@
 
 body{
-    background: #121212
+    background: #121212;
 }
-
-
 .input-group-text{
     background: #121212;
     color: white;
@@ -22,6 +20,7 @@ body{
 {
     max-width: fit-content;
 }
+
 
 #loadingScreen {
     display: none;
@@ -245,12 +244,8 @@ font-size:1em;
 
 }
 
-.carousel{
-    border: #c42a2a solid 2px;
-    border-radius:1em;
 
 
-}
 
 /*.wrapper*/
 /*{*/
@@ -261,12 +256,7 @@ font-size:1em;
 /*    border:  solid 2px;*/
 /*    border-radius:1px;*/
 /*}*/
-.table{
-    width: 100%;
-    padding: 2rem;
-    border: white solid 1px;
-    border-radius: 1em;
-}
+
 
 @keyframes rot55 {
     to {

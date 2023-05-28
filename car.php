@@ -31,7 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
 <head>
 
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type"
+  content="text/html;
+  charset=ISO-8859-1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -97,9 +100,9 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
 <!-- BODY START -->
 <div class=" main d-flex justify-content-center align-item-center ">
     <div class="row justify-content-center align-item-center">
-        <div class="col-12 d-flex justify-content-center align-item-center"
+        <div class="col-12 d-flex justify-content-center align-item-center">
             <!-- Carousel START-->
-            <div id="carousel" class="carousel slide w-85 ">
+            <div  id="carousel" class="carousel slide w-75 designCar ">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="<?php echo $row['image_path'] ?>" class="d-block w-100" alt="IMAGe OF A CAR 1">
@@ -120,77 +123,67 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            
         </div>
        <!--  Carousel End -->
-
-        <div class="col-12">
-            <h2><?php echo $row["year"].' '.$row["manufacturer"].' ',$row["car_model"] ?></h2>
-        </div>
-        <div class="col-12 d-flex justify-content-center align-item-center">
-
-            <div class="card  cb2 mb-2 d-flex text-center" style="width: 60rem;">
-
-                <div class="card-body align-items-left d-flex justify-content-left">
-
-                        <table class="details w-100" >
-                        
-                        <tr>
-                            <td>
-                               <th> Make:</th>
-                            </td>
-                            <td>
-                                <?php echo $row['manufacturer'] ?>
-                            </td>
-                        </tr>
-
-                            <tr>
-                                <td>
-                                <th> Model:</th>
-                                </td>
-                                <td>
-                                    <?php echo $row['car_type'] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                <th> KM Driven</th>
-                                </td>
-                                <td>
-                                    <?php echo $row['kilometers'] ?>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                <th> Vin:</th>
-                                </td>
-                                <td>
-                                    <?php echo $row['vin'] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                <th> Price:</th>
-                                </td>
-                                <td>
-                                    <?php echo $row['price'] ?>
-                                </td>
-                            </tr>
-
-                        </table>
-
-
-                </div>
-                <a class="btn btn-outline-success btn-nav-search" href="form.php">Contact Seller</a>
-                            
-            </div>
-
-
-        </div>
-
-
+       <h2><?php echo $row["year"].' '.$row["manufacturer"].' ',$row["car_model"] ?></h2>
+       <h2><?php echo $row["price"]?></h2>
     </div>
+    
 </div>
+<div class=" main d-flex justify-content-center align-item-center mb-2">
+<div class="col mb-2 ">
+<table>
+        <tr>
+        <td>
+            Make
+        </td>
+        <td>
+        <?php echo $row['manufacturer'] ?>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+            Model
+        </td>
+        <td>
+        <?php echo $row['car_type'] ?>
+        </td>
+        </tr><tr>
+        <td>
+            KM Driven 
+        </td>
+        <td>
+        <?php echo $row['kilometers'] ?>
+        </td>
+        </tr>
+         <tr>
+            <td>
+            Vin:
+            </td>
+            <td>
+                <?php echo $row['vin'] ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            Description:
+            </td>
+            <td>
+                <?php echo $row['description'] ?>
+            </td>
+        </tr>
+
+
+
+</table>
+<a href="form.php" class="btn btn-lg btn-outline-success btn-nav-search m-2">Contact Seller</a>
+</div>
+
+</div>
+
+
 <?php }}else {
     header("refresh:0;url=notFound.php");
 }}?>
@@ -270,3 +263,10 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
 </body>
 
 </html>
+
+<!--
+    
+
+
+
+-- >
